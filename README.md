@@ -1,35 +1,28 @@
-# React + TypeScript + Vite
+# Accessible Components Playground (FlyRank FE-05)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Three interactive components built from scratch in React + TypeScript, with no
+component libraries, following the W3C ARIA Authoring Practices patterns:
 
-Currently, two official plugins are available:
+- **Disclosure**: `src/components/Disclosure.tsx`
+- **Tabs**: `src/components/Tabs.tsx`
+- **Modal**: `src/components/Modal.tsx`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+shadcn/ui `dialog` and `tabs` are installed under `src/components/ui/` only
+for comparison.
 
-## React Compiler
+**Findings:** see [NOTES.md](./NOTES.md) for what shadcn handled that my
+versions missed.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Run locally
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Then open http://localhost:5173 and try everything with the keyboard only
+(Tab, Shift+Tab, Enter, Space, Escape, arrows, Home/End).
+
+## Stack
+
+React, TypeScript (strict), Vite, Tailwind CSS, shadcn/ui (comparison only)
